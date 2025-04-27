@@ -15,7 +15,7 @@ function Start() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-yellow-400">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="text-3xl font-bold mb-10">NOCASH</h1>
 
       <div className="flex flex-col gap-4 w-40">
