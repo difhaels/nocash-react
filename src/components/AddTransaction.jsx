@@ -67,7 +67,10 @@ export default function AddTransaction() {
 
         {/* Tombol Submit */}
         <div className="mb-2 flex  items-center justify-between">
-          <ChevronUp />
+          <div className="relative z-[5] bg-white border-[1px] translate-2 cursor-pointer hover:bg-[#222222] hover:text-white">
+            <ChevronUp />
+          </div>
+
           <ShadowComp
             child={
               <button
