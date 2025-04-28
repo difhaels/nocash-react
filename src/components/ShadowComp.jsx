@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Shadow({ child }) {
+export default function ShadowComp({ child }) {
   return (
     <div className="relative inline-block">
       {/* Bayangan */}
