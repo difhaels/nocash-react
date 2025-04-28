@@ -68,12 +68,16 @@ export default function Home() {
           {/* Tombol Submit */}
           <div className="mb-2 flex  items-center justify-between">
             <ChevronUp />
-            <Shadow child={<button
-      type="submit"
-      className="relative z-[5] px-6 py-2 bg-[#108EE9] rounded-xl border border-[#108EE9] hover:bg-blue-600 transition"
-    >
-      Tambah
-    </button>}/>
+            <Shadow
+              child={
+                <button
+                  type="submit"
+                  className="relative z-[5] px-6 py-2 bg-[#108EE9] rounded-xl border border-[#108EE9] hover:bg-blue-600 transition"
+                >
+                  Tambah
+                </button>
+              }
+            />
           </div>
         </form>
       </div>

@@ -1,5 +1,6 @@
 import { FolderDown, FolderUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import Shadow from "../components/Shadow";
 
 function Start() {
   const navigate = useNavigate();
@@ -16,23 +17,31 @@ function Start() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-3xl font-bold mb-10">NOCASH</h1>
-
+      <img src="/logonocash.png" alt="logo" className="w-36" />
       <div className="flex flex-col gap-4 w-40">
-        <div
-          onClick={handleCreate}
-          className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-sm cursor-pointer transition duration-300 flex justify-center-safe"
-        >
-          <FolderDown className="pr-2 w-8"/>
-          Create
-        </div>
-        <div
-          onClick={handleLoad}
-          className="bg-[#336AE9] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-sm cursor-pointer transition duration-300 flex justify-center-safe"
-        >
-          <FolderUp className="pr-2 w-8"/>
-          Load
-        </div>
+        <Shadow
+          child={
+            <div
+              onClick={handleCreate}
+              className="relative bg-green-500 hover:bg-green-600 font-bold py-2 px-4 cursor-pointer transition duration-300 flex justify-center-safe rounded-lg z-[5]"
+            >
+              <FolderDown className="pr-2 w-8" />
+              Create
+            </div>
+          }
+        />
+
+        <Shadow
+          child={
+            <div
+              onClick={handleLoad}
+              className="relative bg-[#336AE9] hover:bg-blue-700 font-bold py-2 px-4 cursor-pointer transition duration-300 flex justify-center-safe rounded-lg z-[5]"
+            >
+              <FolderUp className="pr-2 w-8" />
+              Load
+            </div>
+          }
+        />
       </div>
     </div>
   );
