@@ -1,6 +1,6 @@
 import { FolderDown, FolderUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import Shadow from "../components/Shadow";
+import Shadow from "../components/ShadowPage";
 
 function Start() {
   const navigate = useNavigate();
