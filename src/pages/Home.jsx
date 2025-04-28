@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
 import { ChevronUp } from "lucide-react";
+import Shadow from "../components/Shadow";
 
 export default function Home() {
   const [tanggal, setTanggal] = useState(() => {
@@ -65,19 +66,14 @@ export default function Home() {
           </div>
 
           {/* Tombol Submit */}
-          <div className="mb-2 flex  items-center justify-between"><ChevronUp />
-            <div className="relative inline-block">
-              {/* Bayangan */}
-              <div className="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-[#222222] rounded-xl z-[2]"></div>
-
-              {/* Tombol */}
-              <button
-                type="submit"
-                className="relative z-[5] px-6 py-2 bg-[#108EE9] rounded-xl border border-[#108EE9] hover:bg-blue-600 transition"
-              >
-                Tambah
-              </button>
-            </div>
+          <div className="mb-2 flex  items-center justify-between">
+            <ChevronUp />
+            <Shadow child={<button
+      type="submit"
+      className="relative z-[5] px-6 py-2 bg-[#108EE9] rounded-xl border border-[#108EE9] hover:bg-blue-600 transition"
+    >
+      Tambah
+    </button>}/>
           </div>
         </form>
       </div>
