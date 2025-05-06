@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="p-5 relative">
       <Header />
-      <ShadowPage child={<Wallet/>}/>
+      <ShadowPage child={<Wallet />} />
       <br />
       <ShadowPage child={<AddTransaction />} />
       <br />

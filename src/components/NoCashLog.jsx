@@ -1,157 +1,59 @@
 import React from "react";
-
+import { BanknoteArrowUp, Carrot } from "lucide-react";
 export default function NoCashLog() {
   return (
-    <div className="border-[1px] rounded-lg bg-[#F7F7F7] relative z-[5] w-full">
-      <h1 className="p-3">No Cash Log</h1>
-      <div class="relative flex flex-col w-full h-full text-gray-700 bg-white">
-        <table class="w-full text-left table-auto min-w-max">
+    <div className="border-[1px] rounded-lg bg-[#F7F7F7] relative z-[5] w-full pb-3">
+      <div className="flex items-center justify-between p-3">
+        <h1>No Cash Log</h1>
+        <button className="bg-[#108EE9] py-1 px-3 rounded-lg text-white hover:bg-blue-400 cursor-pointer">
+          filter
+        </button>
+      </div>
+      <div className="relative flex flex-col w-full h-full text-gray-700 bg-white">
+        <table className="w-full text-left table-auto min-w-max">
           <thead>
             <tr>
-              <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
-                  Name
+              <th className="p-4 border-b">
+                <p className="block font-sans text-sm font-normal leading-none text-blue-gray-900 opacity-70">
+                  Category
                 </p>
               </th>
-              <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
-                  Job
+              <th className="p-4 border-b">
+                <p className="block font-sans text-sm font-normal leading-none text-blue-gray-900 opacity-70">
+                  Amount
                 </p>
-              </th>
-              <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70">
-                  Employed
-                </p>
-              </th>
-              <th class="p-4 border-b border-blue-gray-100 bg-blue-gray-50">
-                <p class="block font-sans text-sm antialiased font-normal leading-none text-blue-gray-900 opacity-70"></p>
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td class="p-4 border-b border-blue-gray-50">
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                  John Michael
+            <tr className="bg-red-200 cursor-pointer hover:bg-red-300">
+              <td className="p-4 border-b flex gap-2 items-center">
+                <div className="p-1 bg-orange-500 flex justify-center items-center rounded-full">
+                  <Carrot className="w-auto h-5 text-white" />
+                </div>
+                <p className="block font-sans text-sm font-normal leading-normal text-blue-gray-900">
+                  Makan
                 </p>
               </td>
-              <td class="p-4 border-b border-blue-gray-50">
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                  Manager
+              <td className="p-4 border-b">
+                <p className="block font-sans text-sm font-normal leading-normal text-blue-gray-900">
+                  Rp50.000
                 </p>
-              </td>
-              <td class="p-4 border-b border-blue-gray-50">
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                  23/04/18
-                </p>
-              </td>
-              <td class="p-4 border-b border-blue-gray-50">
-                <a
-                  href="#"
-                  class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900"
-                >
-                  Edit
-                </a>
               </td>
             </tr>
-            <tr>
-              <td class="p-4 border-b border-blue-gray-50">
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                  Alexa Liras
+            <tr className="bg-green-200 cursor-pointer hover:bg-green-300">
+              <td className="p-4 border-b flex gap-2 items-center">
+                <div className="p-1 bg-red-500 flex justify-center items-center rounded-full">
+                  <BanknoteArrowUp className="w-auto h-5 text-white" />
+                </div>
+                <p className="block font-sans text-sm font-normal leading-normal text-blue-gray-900">
+                  Gaji
                 </p>
               </td>
-              <td class="p-4 border-b border-blue-gray-50">
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                  Developer
+              <td className="p-4 border-b">
+                <p className="block font-sans text-sm font-normal leading-normal text-blue-gray-900">
+                  Rp20.000
                 </p>
-              </td>
-              <td class="p-4 border-b border-blue-gray-50">
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                  23/04/18
-                </p>
-              </td>
-              <td class="p-4 border-b border-blue-gray-50">
-                <a
-                  href="#"
-                  class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900"
-                >
-                  Edit
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td class="p-4 border-b border-blue-gray-50">
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                  Laurent Perrier
-                </p>
-              </td>
-              <td class="p-4 border-b border-blue-gray-50">
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                  Executive
-                </p>
-              </td>
-              <td class="p-4 border-b border-blue-gray-50">
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                  19/09/17
-                </p>
-              </td>
-              <td class="p-4 border-b border-blue-gray-50">
-                <a
-                  href="#"
-                  class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900"
-                >
-                  Edit
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td class="p-4 border-b border-blue-gray-50">
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                  Michael Levi
-                </p>
-              </td>
-              <td class="p-4 border-b border-blue-gray-50">
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                  Developer
-                </p>
-              </td>
-              <td class="p-4 border-b border-blue-gray-50">
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                  24/12/08
-                </p>
-              </td>
-              <td class="p-4 border-b border-blue-gray-50">
-                <a
-                  href="#"
-                  class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900"
-                >
-                  Edit
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td class="p-4">
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                  Richard Gran
-                </p>
-              </td>
-              <td class="p-4">
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                  Manager
-                </p>
-              </td>
-              <td class="p-4">
-                <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
-                  04/10/21
-                </p>
-              </td>
-              <td class="p-4">
-                <a
-                  href="#"
-                  class="block font-sans text-sm antialiased font-medium leading-normal text-blue-gray-900"
-                >
-                  Edit
-                </a>
               </td>
             </tr>
           </tbody>
