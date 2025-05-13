@@ -31,14 +31,17 @@ export default function NoCashLog() {
                 <div className="p-1 bg-orange-500 flex justify-center items-center rounded-full">
                   <Carrot className="w-auto h-5 text-white" />
                 </div>
-                <p className="block font-sans text-sm font-normal leading-normal text-blue-gray-900">
+                <p className="block font-sans text-sm text-blue-gray-900">
                   Makan
                 </p>
               </td>
               <td className="p-4 border-b">
-                <p className="block font-sans text-sm font-normal leading-normal text-blue-gray-900">
-                  Rp50.000
-                </p>
+                <div className="flex gap-1">
+                  <p>-</p>
+                  <p className="block font-sans text-sm text-blue-gray-900">
+                    Rp50.000
+                  </p>
+                </div>
               </td>
             </tr>
             <tr className="bg-green-200 cursor-pointer hover:bg-green-300">
@@ -46,14 +49,17 @@ export default function NoCashLog() {
                 <div className="p-1 bg-red-500 flex justify-center items-center rounded-full">
                   <BanknoteArrowUp className="w-auto h-5 text-white" />
                 </div>
-                <p className="block font-sans text-sm font-normal leading-normal text-blue-gray-900">
+                <p className="block font-sans text-sm text-blue-gray-900">
                   Gaji
                 </p>
               </td>
               <td className="p-4 border-b">
-                <p className="block font-sans text-sm font-normal leading-normal text-blue-gray-900">
-                  Rp20.000
-                </p>
+              <div className="flex gap-1">
+                  <p></p>
+                  <p className="block font-sans text-sm text-blue-gray-900">
+                    Rp50.000
+                  </p>
+                </div>
               </td>
             </tr>
           </tbody>
