@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ChevronUp } from "lucide-react";
 import ShadowComp from "./ShadowMini";
-export default function AddTransaction() {
+export default function AddTransaction({onClose}) {
   const [tanggal, setTanggal] = useState(() => {
     const today = new Date();
     return today.toISOString().split("T")[0]; // format YYYY-MM-DD
@@ -67,7 +67,7 @@ export default function AddTransaction() {
 
         {/* Tombol Submit */}
         <div className="mb-2 flex  items-center justify-between">
-          <div className="relative z-[5] bg-white border-[1px] translate-2 cursor-pointer hover:bg-[#222222] hover:text-white">
+          <div className="relative z-[5] bg-white border-[1px] translate-2 cursor-pointer hover:bg-[#ff7979] hover:text-white" onClick={onClose}>
             <ChevronUp />
           </div>
 
