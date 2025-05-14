@@ -1,8 +1,8 @@
 import React from "react";
 
-export default function ShadowComp({ child }) {
+export default function ShadowMax({ child }) {
   return (
-    <div className="relative inline-block">
+    <div className="relative block w-full">
       {/* Bayangan */}
       <div className="absolute inset-0 translate-x-1.5 translate-y-1.5 bg-[#222222] rounded-xl z-[2]"></div>
 

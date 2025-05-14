@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ChevronUp } from "lucide-react";
-import ShadowComp from "./ShadowComp";
+import ShadowComp from "./ShadowMini";
 export default function AddTransaction() {
   const [tanggal, setTanggal] = useState(() => {
     const today = new Date();

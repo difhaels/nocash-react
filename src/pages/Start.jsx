@@ -1,6 +1,6 @@
 import { FolderDown, FolderUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import Shadow from "../components/ShadowPage";
+import ShadowMax from "../components/ShadowMax";
 
 function Start() {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ function Start() {
     <div className="flex flex-col items-center justify-center min-h-screen">
       <img src="/logonocash.png" alt="logo" className="w-36" />
       <div className="flex flex-col gap-4 w-40">
-        <Shadow
+        <ShadowMax
           child={
             <div
               onClick={handleCreate}
@@ -31,7 +31,7 @@ function Start() {
           }
         />
 
-        <Shadow
+        <ShadowMax
           child={
             <div
               onClick={handleLoad}
