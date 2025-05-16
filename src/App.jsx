@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Start from "./pages/Start";
 import Home from "./pages/Home";
 import FileEditor from "./pages/FileEditor";
+import Transaction from "./components/Transaction";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Start />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/transaction" element={<Transaction />} />
           <Route path="/editor" element={<FileEditor />} />
         </Routes>
       </div>
