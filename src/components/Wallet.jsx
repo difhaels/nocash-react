@@ -2,7 +2,7 @@ import { CirclePlus, WalletMinimal } from "lucide-react";
 import React, { useState } from "react";
 
 export default function Wallet() {
-  const [acc, setAcc] = useState(1);
+  const [acc, setAcc] = useState(0);
   return (
     <div className="border-[1px] rounded-lg bg-[#F7F7F7] relative z-[5] w-full p-3 flex justify-between items-center ">
       <div>

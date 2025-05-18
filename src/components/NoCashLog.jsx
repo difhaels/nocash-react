@@ -1,6 +1,9 @@
-import React from "react";
 import { BanknoteArrowUp, Carrot } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 export default function NoCashLog() {
+
+  const navigate = useNavigate();
+  
   return (
     <div className="border-[1px] rounded-lg bg-[#F7F7F7] relative z-[5] w-full pb-3">
       <div className="flex items-center justify-between p-3">
@@ -26,7 +29,7 @@ export default function NoCashLog() {
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-red-200 cursor-pointer hover:bg-red-300">
+            <tr className="bg-red-200 cursor-pointer hover:bg-red-300" onClick={() => {navigate('/transaction')}}>
               <td className="p-4 border-b flex gap-2 items-center">
                 <div className="p-1 bg-orange-500 flex justify-center items-center rounded-full">
                   <Carrot className="w-auto h-5 text-white" />
