@@ -1,0 +1,17 @@
+export const categories = [
+  { label: "Makan & Minum", value: "makan" },
+  { label: "Transportasi", value: "transportasi" },
+  { label: "Belanja Harian", value: "belanja" },
+  { label: "Hiburan", value: "hiburan" },
+  { label: "Kesehatan", value: "kesehatan" },
+  { label: "Pendidikan", value: "pendidikan" },
+  { label: "Tagihan", value: "tagihan" },
+  { label: "Sosial & Hadiah", value: "sosial" },
+  { label: "Cicilan / Hutang", value: "cicilan" },
+  { label: "Lain-lain", value: "lain" },
+  { label: "Gaji / Upah", value: "gaji" },
+  { label: "Bonus / THR", value: "bonus" },
+  { label: "Penjualan", value: "penjualan" },
+  { label: "Hibah / Hadiah", value: "hadiah" },
+  { label: "Investasi / Dividen", value: "investasi" },
+];
