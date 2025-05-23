@@ -6,10 +6,13 @@ import AddTransaction from "../components/AddTransaction";
 import Wallet from "../components/Wallet";
 import NoCashLog from "../components/NoCashLog";
 import AddButton from "../components/AddButton";
+import AddWallet from "../components/AddWallet";
 
 export default function Home() {
-  
-  // toggle modal transaction
+  // toggle modal add wallet
+  const [isWallet, setIsWallet] = useState(true);
+
+  // toggle modal add transaction
   const [isTransaction, setIsTransaction] = useState(false);
 
   return (
@@ -21,24 +24,46 @@ export default function Home() {
       </div>
 
       <div className="mb-5">
-        <ShadowMax child={<Wallet />} />
+        <ShadowMax
+          child={
+            <Wallet
+              onAdd={() => {
+                setIsWallet(true);
+              }}
+            />
+          }
+        />
       </div>
 
       <div>
         <ShadowMax child={<NoCashLog />} />
       </div>
 
-      <div isTransaction={isTransaction}>
-        {isTransaction ? (
-          <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 px-5">
-            <ShadowMax
-              child={<AddTransaction onClose={() => setIsTransaction(false)} />}
-            />
-          </div>
-        ) : (
-          ""
-        )}
-      </div>
+      {isTransaction ? (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 px-5">
+          <ShadowMax
+            child={<AddTransaction onClose={() => setIsTransaction(false)} />}
+          />
+        </div>
+      ) : (
+        ""
+      )}
+
+      {isWallet ? (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 px-5">
+          <ShadowMax
+            child={
+              <AddWallet
+                onClose={() => {
+                  setIsWallet(false);
+                }}
+              />
+            }
+          />
+        </div>
+      ) : (
+        ""
+      )}
 
       <div
         className="fixed z-[5] bottom-3 right-3"
