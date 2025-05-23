@@ -8,7 +8,9 @@ import NoCashLog from "../components/NoCashLog";
 import AddButton from "../components/AddButton";
 
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(false);
+  
+  // toggle modal transaction
+  const [isTransaction, setIsTransaction] = useState(false);
 
   return (
     <div className="p-5 relative">
@@ -26,11 +28,11 @@ export default function Home() {
         <ShadowMax child={<NoCashLog />} />
       </div>
 
-      <div isOpen={isOpen}>
-        {isOpen ? (
+      <div isTransaction={isTransaction}>
+        {isTransaction ? (
           <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50 px-5">
             <ShadowMax
-              child={<AddTransaction onClose={() => setIsOpen(false)} />}
+              child={<AddTransaction onClose={() => setIsTransaction(false)} />}
             />
           </div>
         ) : (
@@ -40,7 +42,7 @@ export default function Home() {
 
       <div
         className="fixed z-[5] bottom-3 right-3"
-        onClick={() => setIsOpen(true)}
+        onClick={() => setIsTransaction(true)}
       >
         <AddButton />
       </div>
