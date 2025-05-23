@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "nama": "Transaksi A",
+    "nominal": 100000
+  },
+  {
+    "id": 2,
+    "nama": "Transaksi B",
+    "nominal": 200000
+  }
+]

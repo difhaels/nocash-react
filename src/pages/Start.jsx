@@ -1,6 +1,7 @@
 import { FolderDown, FolderUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import ShadowMax from "../components/ShadowMax";
+import { useState } from "react";
 
 function Start() {
   const navigate = useNavigate();
@@ -10,9 +11,35 @@ function Start() {
     navigate("/home");
   };
 
-  const handleLoad = () => {
-    // Logic buat load file (sementara arahkan ke Home)
-    navigate("/home");
+ const [status, setStatus] = useState("");
+
+  const handleReplaceJson = async () => {
+    const dataBaru = [
+      { id: 1, nama: "Transaksi A", nominal: 100000 },
+      { id: 2, nama: "Transaksi B", nominal: 200000 }
+    ];
+
+    try {
+      // 1. Minta file dari user
+      const [fileHandle] = await window.showOpenFilePicker({
+        types: [{ accept: { "application/json": [".json"] } }],
+      });
+
+      // 2. Baca file hanya untuk validasi (optional)
+      const file = await fileHandle.getFile();
+      const original = await file.text();
+      console.log("File sebelumnya:", original);
+
+      // 3. Tulis ulang file dengan dataBaru
+      const writable = await fileHandle.createWritable();
+      await writable.write(JSON.stringify(dataBaru, null, 2));
+      await writable.close();
+
+      setStatus("✅ File berhasil diganti!");
+    } catch (err) {
+      console.error(err);
+      setStatus("❌ Gagal mengganti file.");
+    }
   };
 
   return (
@@ -34,7 +61,7 @@ function Start() {
         <ShadowMax
           child={
             <div
-              onClick={handleLoad}
+              onClick={handleReplaceJson}
               className="relative bg-[#336AE9] hover:bg-blue-700 font-bold py-2 px-4 cursor-pointer transition duration-300 flex justify-center-safe rounded-lg z-[5]"
             >
               <FolderUp className="pr-2 w-8" />
@@ -42,6 +69,8 @@ function Start() {
             </div>
           }
         />
+
+        <div>{status}</div>
       </div>
     </div>
   );
