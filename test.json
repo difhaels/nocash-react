@@ -1,12 +1,7 @@
-[
-  {
-    "id": 1,
-    "nama": "Transaksi A",
-    "nominal": 100000
-  },
-  {
-    "id": 2,
-    "nama": "Transaksi B",
-    "nominal": 200000
-  }
-]
+{
+  "akun": { "id": "dompet-1", "nama": "Dompet Pribadi", "saldo": 50000 },
+  "transaksi": [
+    { "id": 1, "tanggal": "2025-05-01", "jumlah": 10000,"keterangan":"makan ice cream", "kategori": "Jajan" , "type" : "min"},
+    { "id": 2, "tanggal": "2025-05-02", "jumlah": 50000,"keterangan":"gaji bulanan", "kategori": "Gaji" , "type" : "plus"}
+  ]
+}

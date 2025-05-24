@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Header from "../components/Header";
 
 import ShadowMax from "../components/ShadowMax";
@@ -7,8 +7,25 @@ import Wallet from "../components/Wallet";
 import NoCashLog from "../components/NoCashLog";
 import AddButton from "../components/AddButton";
 import AddWallet from "../components/AddWallet";
+import Status from "../components/Status";
 
 export default function Home() {
+  const [data, setData] = useState(null);
+  const fileInputRef = useRef();
+  const handleFileRead = async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const text = await file.text(); // baca isi file
+  try {
+    const json = JSON.parse(text); // ubah ke objek JS
+    setData(json); // simpan ke state
+    console.log("Data loaded:", json);
+  } catch (err) {
+    alert("File bukan format JSON yang valid.");
+  }
+};
+
   // toggle modal add wallet
   const [isWallet, setIsWallet] = useState(true);
 
@@ -18,10 +35,7 @@ export default function Home() {
   return (
     <div className="p-5 relative">
       <Header />
-      <div className="mb-3">
-        <h1 className="font-semibold">File Name:</h1>
-        <h1 className="font-semibold">Last Change:</h1>
-      </div>
+      <Status data={data}/>
 
       <div className="mb-5">
         <ShadowMax
@@ -71,6 +85,15 @@ export default function Home() {
       >
         <AddButton />
       </div>
+      <input
+  type="file"
+  accept=".json"
+  onChange={handleFileRead}
+
+  ref={fileInputRef}
+/>
+
     </div>
+    
   );
 }
