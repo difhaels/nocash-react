@@ -6,14 +6,14 @@ export default function Wallet({onAdd}) {
   return (
     <div className="border-[1px] rounded-lg bg-[#F7F7F7] relative z-[5] w-full p-3 flex justify-between items-center ">
       <div>
-        <h1 className="font-semibold">Wallet</h1>
+        <h1 className="font-semibold">Dompet</h1>
         {acc ? (
           <div className="flex gap-1">
             <h1>Rp </h1>
             <h1>100.000</h1>
           </div>
         ) : (
-          <h1>Add your wallet first!</h1>
+          <h1>Tambahkan Dompet Kamu Terlebih Dahulu!</h1>
         )}
       </div>
       <div>
