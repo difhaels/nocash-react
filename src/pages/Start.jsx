@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import ShadowMax from "../components/ShadowMax";
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
+import { setData } from "./../data/dataSlice"; 
+
 
 function Start() {
   const navigate = useNavigate();
@@ -21,7 +23,7 @@ function Start() {
     const reader = new FileReader();
     reader.onload = (e) => {
       try {
-        const json = JSON.parse(e.target.result);
+        const json = JSON.parse(e.target.result);;
         dispatch(setData(json));
       } catch (err) {
         alert("File JSON tidak valid.");
