@@ -27,7 +27,7 @@ export default function Home() {
 };
 
   // toggle modal add wallet
-  const [isWallet, setIsWallet] = useState(true);
+  const [isWallet, setIsWallet] = useState(false);
 
   // toggle modal add transaction
   const [isTransaction, setIsTransaction] = useState(false);
