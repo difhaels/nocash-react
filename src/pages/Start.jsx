@@ -1,7 +1,8 @@
 import { FolderDown, FolderUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import ShadowMax from "../components/ShadowMax";
-import { useState } from "react";
+import { useRef } from "react";
+import { useDispatch } from "react-redux";
 
 function Start() {
   const navigate = useNavigate();
@@ -11,35 +12,22 @@ function Start() {
     navigate("/home");
   };
 
- const [status, setStatus] = useState("");
+  const dispatch = useDispatch();
+  const fileInputRef = useRef();
 
-  const handleReplaceJson = async () => {
-    const dataBaru = [
-      { id: 1, nama: "Transaksi A", nominal: 100000 },
-      { id: 2, nama: "Transaksi B", nominal: 200000 }
-    ];
-
-    try {
-      // 1. Minta file dari user
-      const [fileHandle] = await window.showOpenFilePicker({
-        types: [{ accept: { "application/json": [".json"] } }],
-      });
-
-      // 2. Baca file hanya untuk validasi (optional)
-      const file = await fileHandle.getFile();
-      const original = await file.text();
-      console.log("File sebelumnya:", original);
-
-      // 3. Tulis ulang file dengan dataBaru
-      const writable = await fileHandle.createWritable();
-      await writable.write(JSON.stringify(dataBaru, null, 2));
-      await writable.close();
-
-      setStatus("✅ File berhasil diganti!");
-    } catch (err) {
-      console.error(err);
-      setStatus("❌ Gagal mengganti file.");
-    }
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const json = JSON.parse(e.target.result);
+        dispatch(setData(json));
+      } catch (err) {
+        alert("File JSON tidak valid.");
+      }
+    };
+    reader.readAsText(file);
   };
 
   return (
@@ -61,7 +49,9 @@ function Start() {
         <ShadowMax
           child={
             <div
-              onClick={handleReplaceJson}
+              onClick={() => {
+                fileInputRef.current.click();
+              }}
               className="relative bg-[#336AE9] hover:bg-blue-700 font-bold py-2 px-4 cursor-pointer transition duration-300 flex justify-center-safe rounded-lg z-[5]"
             >
               <FolderUp className="pr-2 w-8" />
@@ -70,7 +60,13 @@ function Start() {
           }
         />
 
-        <div>{status}</div>
+        <input
+          type="file"
+          accept=".json"
+          onChange={handleFileChange}
+          className="hidden"
+          ref={fileInputRef}
+        />
       </div>
     </div>
   );
